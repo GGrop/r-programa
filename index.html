@@ -6,9 +6,11 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
-    <script src='main.js'></script>
 </head>
 <body>
+    <header>
+        <p>soy header</p>
+    </header>
     <ul>
         <li>1</li>
         <li>2</li>
@@ -16,6 +18,18 @@
         <li>4</li>
     </ul>
     <h1 class="claseEjemplo">Hola mundo</h1>
-    <script src="index.js"></script>
+    <form>
+        <input type="text" placeholder="ingresa tu nombre" id="nombre-usuario">
+        <input type="number" placeholder="ingresa tu edad" id="edad-usuario">
+        <input type="submit" value="ingresar" id="ingresar"/>
+    </form>
+    <form>
+        <input type="text" placeholder="ingresa tu nombre" id="nombre-usuario2">
+        <input type="number" placeholder="ingresa tu sueldo" id="sueldo-usuario">
+        <input type="submit" value="ingresar" id="ingresar2"/>
+    </form>
+    <div id="resultado"></div>
+    <img src="pepe/pepe.png" alt="" id="foto">
+    <script src="index.js" ></script>
 </body>
 </html>

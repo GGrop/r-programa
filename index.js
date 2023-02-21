@@ -91,77 +91,124 @@
 // } else{
 //   console.log('no entendi tu respuesta')
 // }
-const tareaEscribiArrays = () => {
-    let comidasFavoritas = ["choripan", "milanesas con papas fritas", "salame"];
-    console.log(comidasFavoritas.length);
-    console.log(comidasFavoritas[2]);
-    comidasFavoritas[0] = "helado";
-    console.log(comidasFavoritas);
-};
-const elMalditoFizzBuzzClasico=()=>{
-//tarea de clase 4
-    const MI_INICIO=1
-    const MI_FINAL=50
-    for(let i=MI_INICIO; i<=MI_FINAL; i=i+1){
-        let multiploDeTres = i%3
-        let multiploDeCinco = i%5
-        if( multiploDeTres ==0 && multiploDeCinco==0){
-        console.log(`FizzBuzz porq el numero es: ${i} y sus restos son: ${multiploDeTres}, ${multiploDeCinco}`)
-        }else if(multiploDeTres == 0){
-        console.log(`Fizz porque el numero es:${i} y su resto es: ${multiploDeTres}`)
-        }else if(multiploDeCinco == 0){
-        console.log(`Buzz porque el numero es:${i} y su resto es: ${multiploDeCinco}`)
-        }else{
-        console.log(i)
+// const tareaEscribiArrays = () => {
+//     let comidasFavoritas = ["choripan", "milanesas con papas fritas", "salame"];
+//     console.log(comidasFavoritas.length);
+//     console.log(comidasFavoritas[2]);
+//     comidasFavoritas[0] = "helado";
+//     console.log(comidasFavoritas);
+// };
+// const elMalditoFizzBuzzClasico=()=>{
+// //tarea de clase 4
+//     const MI_INICIO=1
+//     const MI_FINAL=50
+//     for(let i=MI_INICIO; i<=MI_FINAL; i=i+1){
+//         let multiploDeTres = i%3
+//         let multiploDeCinco = i%5
+//         if( multiploDeTres ==0 && multiploDeCinco==0){
+//         console.log(`FizzBuzz porq el numero es: ${i} y sus restos son: ${multiploDeTres}, ${multiploDeCinco}`)
+//         }else if(multiploDeTres == 0){
+//         console.log(`Fizz porque el numero es:${i} y su resto es: ${multiploDeTres}`)
+//         }else if(multiploDeCinco == 0){
+//         console.log(`Buzz porque el numero es:${i} y su resto es: ${multiploDeCinco}`)
+//         }else{
+//         console.log(i)
+//         }
+//     }
+// }
+
+// const elMalditoFizzBuzzDeNuevo=()=>{
+// for(let i = 1; i<=50;i++){
+//     let texto=''
+
+//     if(i % 3 === 0){
+//     texto='Fizz'
+//     }
+//     if(i % 5 === 0){
+//     texto = texto + 'Buzz'
+//     }
+//     console.log(texto || i)
+// }
+// }
+
+// const tareaClase4=()=>{
+// let contador=0
+// for(let i=3; i<=22;i=i+3){
+//     console.log(i)
+// }
+// }
+// const tareaClase4b=()=>{
+// let i =10
+// while(i >=1){
+//     console.log(i)
+//     i-=1
+// }
+// }
+
+// const tareaClase5=()=>{
+//     const miTitulo = document.querySelector('.claseEjemplo')
+//     console.log(miTitulo)
+//     console.log(miTitulo.innerText)
+//     miTitulo.innerText="Chau mundo"
+// }
+// const tareaClase5b=()=>{
+//     const mediaLinks= document.querySelectorAll('li')
+//     console.log(mediaLinks)
+//     for(let i=0; i<mediaLinks.length;i++){
+//         console.log(mediaLinks[i].innerText)
+//     }
+// }
+
+const tareaClase5c=()=>{
+
+    const ingresarButton = document.querySelector('#ingresar')
+    console.log(ingresarButton)
+    
+    ingresarButton.onclick = function(e){
+        e.preventDefault()
+        const nombreUsuario = document.querySelector('#nombre-usuario').value
+        const edadUsuario = Number(document.querySelector('#edad-usuario').value)
+        let textoResultado
+        if(edadUsuario >= 18){
+            textoResultado = 'podes entrar'
+        } else {
+            textoResultado = 'no podes entrar'
         }
+        document.querySelector('#resultado').innerText = textoResultado
     }
 }
 
-const elMalditoFizzBuzzDeNuevo=()=>{
-for(let i = 1; i<=50;i++){
-    let texto=''
-
-    if(i % 3 === 0){
-    texto='Fizz'
-    }
-    if(i % 5 === 0){
-    texto = texto + 'Buzz'
-    }
-    console.log(texto || i)
-}
-}
-
-const tareaClase4=()=>{
-let contador=0
-for(let i=3; i<=22;i=i+3){
-    console.log(i)
-}
-}
-const tareaClase4b=()=>{
-let i =10
-while(i >=1){
-    console.log(i)
-    i-=1
-}
-}
-
-const tareaClase5=()=>{
-    const miTitulo = document.querySelector('.claseEjemplo')
-    console.log(miTitulo)
-    console.log(miTitulo.innerText)
-    miTitulo.innerText="Chau mundo"
-}
-const tareaClase5b=()=>{
-    const mediaLinks= document.querySelectorAll('li')
-    console.log(mediaLinks)
-    for(let i=0; i<mediaLinks.length;i++){
-        console.log(mediaLinks[i].innerText)
+const tareaClase5d=()=>{
+    const botonIngreso = document.querySelector('#ingresar2')
+    botonIngreso.onclick = function(e){
+        e.preventDefault()
+        const nombreUsuario = document.querySelector('#nombre-usuario2').value
+        const sueldoUsuario = Number(document.querySelector('#sueldo-usuario').value)
+        
+        document.querySelector('#resultado').innerText = `Hola ${nombreUsuario}, tu sueldo anual es: ${sueldoUsuario*12}`
     }
 }
 
+    const tareaClase6a=()=>{
+        document.querySelector('#foto').src = "jose/jose.png"
+        document.querySelector('h1').style.backgroundColor = 'red'
+    }
+
+    const tareaClase6b=()=>{
+        const logo = document.createElement('img')
+        logo.src= 'logo/logo.png'
+        logo.style.backgroundColor = "cyan"
+        const nodoHeader = document.querySelector('header')
+        nodoHeader.appendChild(logo)
+    }
+    
 const reproducirFuncion=()=>{
-    tareaClase5()
-    tareaClase5b()
+    // tareaClase5()
+    // tareaClase5b()
+    // tareaClase5c()
+    // tareaClase5d()
+    tareaClase6a()
+    tareaClase6b()
 }
 
 reproducirFuncion()
