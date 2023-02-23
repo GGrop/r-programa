@@ -207,8 +207,8 @@ const reproducirFuncion=()=>{
     // tareaClase5b()
     // tareaClase5c()
     // tareaClase5d()
-    tareaClase6a()
-    tareaClase6b()
+    // tareaClase6a()
+    // tareaClase6b()
 }
 
 reproducirFuncion()

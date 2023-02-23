@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="clase6-tareaClase8.css">
+</head>
+<body>
+    <form action="">
+        <div id="ingreso">
+            <label>Cuanta gente hay en el grupo familiar?</label>
+            <input type="number" id="cantidad-integrantes">
+        </div>
+        <button id="siguiente">Siguiente</button>
+
+        <div id="integrantes"></div>
+
+        <button id="calcular"  class="hidden">Calcular</button>
+
+        <div id="resultados" class="hidden">
+            <h3>Sobre su grupo familiar:</h3>
+            <div>
+                <label>El integrante con mayor edad tiene:</label>
+                <input type="text" disabled id="mayor">
+            </div>
+            <div>
+                <label>El integrante con menor edad tiene:</label>
+                <input type="text" disabled id="menor">
+            </div>
+            <div>
+                <label>La edad promedio del grupo familiar es de:</label>
+                <input type="text" disabled id="promedio">
+            </div>
+        </div>
+
+        <button type="reset" id="reset">resetear</button>
+        
+    </form>
+    <script src="tarea-clase-8.js"></script>
+    <script src="pruebas.js"></script>
+</body>
+</html>
