@@ -42,6 +42,8 @@ const borrarIntegrantes=()=>{
     }
 }
 const crearIntegrantes=(numeroIntegrantes)=>{
+
+
     if(numeroIntegrantes>0){
         mostrarBotonCalcular()
     }
@@ -129,7 +131,6 @@ const crearErroresNuevos=(error,key)=>{
     $error.className = 'error'
     document.querySelector(`#${key}`).appendChild($error)
 }
-
 
 const CalcularEdadMayor=(edades)=>{
     let edadMayor= edades[0]
