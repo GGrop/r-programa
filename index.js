@@ -159,56 +159,94 @@
 //     }
 // }
 
-const tareaClase5c=()=>{
+// const tareaClase5c=()=>{
 
-    const ingresarButton = document.querySelector('#ingresar')
-    console.log(ingresarButton)
+//     const ingresarButton = document.querySelector('#ingresar')
+//     console.log(ingresarButton)
     
-    ingresarButton.onclick = function(e){
-        e.preventDefault()
-        const nombreUsuario = document.querySelector('#nombre-usuario').value
-        const edadUsuario = Number(document.querySelector('#edad-usuario').value)
-        let textoResultado
-        if(edadUsuario >= 18){
-            textoResultado = 'podes entrar'
-        } else {
-            textoResultado = 'no podes entrar'
-        }
-        document.querySelector('#resultado').innerText = textoResultado
-    }
-}
+//     ingresarButton.onclick = function(e){
+//         e.preventDefault()
+//         const nombreUsuario = document.querySelector('#nombre-usuario').value
+//         const edadUsuario = Number(document.querySelector('#edad-usuario').value)
+//         let textoResultado
+//         if(edadUsuario >= 18){
+//             textoResultado = 'podes entrar'
+//         } else {
+//             textoResultado = 'no podes entrar'
+//         }
+//         document.querySelector('#resultado').innerText = textoResultado
+//     }
+// }
 
-const tareaClase5d=()=>{
-    const botonIngreso = document.querySelector('#ingresar2')
-    botonIngreso.onclick = function(e){
-        e.preventDefault()
-        const nombreUsuario = document.querySelector('#nombre-usuario2').value
-        const sueldoUsuario = Number(document.querySelector('#sueldo-usuario').value)
+// const tareaClase5d=()=>{
+//     const botonIngreso = document.querySelector('#ingresar2')
+//     botonIngreso.onclick = function(e){
+//         e.preventDefault()
+//         const nombreUsuario = document.querySelector('#nombre-usuario2').value
+//         const sueldoUsuario = Number(document.querySelector('#sueldo-usuario').value)
         
-        document.querySelector('#resultado').innerText = `Hola ${nombreUsuario}, tu sueldo anual es: ${sueldoUsuario*12}`
-    }
-}
+//         document.querySelector('#resultado').innerText = `Hola ${nombreUsuario}, tu sueldo anual es: ${sueldoUsuario*12}`
+//     }
+// }
 
-    const tareaClase6a=()=>{
-        document.querySelector('#foto').src = "jose/jose.png"
-        document.querySelector('h1').style.backgroundColor = 'red'
-    }
+//     const tareaClase6a=()=>{
+//         document.querySelector('#foto').src = "jose/jose.png"
+//         document.querySelector('h1').style.backgroundColor = 'red'
+//     }
 
-    const tareaClase6b=()=>{
-        const logo = document.createElement('img')
-        logo.src= 'logo/logo.png'
-        logo.style.backgroundColor = "cyan"
-        const nodoHeader = document.querySelector('header')
-        nodoHeader.appendChild(logo)
-    }
+//     const tareaClase6b=()=>{
+//         const logo = document.createElement('img')
+//         logo.src= 'logo/logo.png'
+//         logo.style.backgroundColor = "cyan"
+//         const nodoHeader = document.querySelector('header')
+//         nodoHeader.appendChild(logo)
+//     }
     
-const reproducirFuncion=()=>{
-    // tareaClase5()
-    // tareaClase5b()
-    // tareaClase5c()
-    // tareaClase5d()
-    // tareaClase6a()
-    // tareaClase6b()
-}
+// const reproducirFuncion=()=>{
+//     // tareaClase5()
+//     // tareaClase5b()
+//     // tareaClase5c()
+//     // tareaClase5d()
+//     // tareaClase6a()
+//     // tareaClase6b()
+// }
 
-reproducirFuncion()
+// reproducirFuncion()
+
+// const num= 3
+// let inicio=1
+// let resultado
+// function factorial(num){
+//     for(let i=1; i<=num; i++){
+//         inicio = inicio*i
+//     }
+//     if(num===0){
+//         inicio=0
+//     }
+//     console.log(inicio)
+// }
+// factorial(3)
+
+// let string1='otto'
+// let string2='toto'
+// let contiene=0
+
+// function contieneString(string1,string2){
+//     for(let i2=0; i2<string2.length; i2++){
+//         for(let i1=0; i1<string1.length;i1++){
+//             console.log(string1[i2])
+//             console.log(string2[i1])
+//             if(string1[i2]===string2[i1]){
+//                 contiene++
+//                 console.log("si contiene")
+//             }
+//         }
+//     }
+//     console.log(contiene)
+//     if(contiene===string1.length){
+//         return true
+//     }else{
+//         return false
+//     }
+// }
+// console.log(contieneString(string1,string2))
