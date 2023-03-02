@@ -1,0 +1,9 @@
+.error{
+    color: red;
+}
+.hidden{
+    display: none;
+}
+*{
+    margin: 5px;
+}
