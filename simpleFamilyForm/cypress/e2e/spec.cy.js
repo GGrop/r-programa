@@ -46,6 +46,9 @@ context('test simple form',()=>{
     cy.get(':nth-child(4) > #edadIntegrante3').type(56)
     cy.get('#calcular').click()
     cy.get('#resultados').should('be.visible')
+    cy.get('#mayor').should('have.value', '56')
+    cy.get('#menor').should('have.value', '15')
+    cy.get('#promedio').should('have.value', '39.75')
   })
   it('do it well and reset',()=>{
     cy.get('#cantidad-integrantes').type(4)
