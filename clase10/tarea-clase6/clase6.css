@@ -1,3 +1,6 @@
+.error{
+    color: red;
+}
 .hidden{
-    display: none;
+    display: none!important
 }

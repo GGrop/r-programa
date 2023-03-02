@@ -1,8 +1,38 @@
 document.querySelector('#siguiente').onclick = function(e){
     e.preventDefault()
+    const numeroIntegrantes= Number(document.querySelector('#cantidad-integrantes').value)
+    const errorCantidadFamiliares = validarCantidadFamiliares(numeroIntegrantes)
+    manejarErroresIngreso(errorCantidadFamiliares)
+    if(!errorCantidadFamiliares){
+        borrarIntegrantes()
+        crearIntegrantes(numeroIntegrantes)
+    }
+}
 
-    borrarIntegrantes()
-    crearIntegrantes()
+const manejarErroresIngreso=(error)=>{
+    const ingreso = document.querySelector('#ingreso').id
+    borrarErroresAnteriores()
+    crearErroresNuevos(error,ingreso)
+}
+
+
+const validarCantidadFamiliares=(cantidadFamiliares)=>{
+    if(cantidadFamiliares <=0){
+        return 'No puede dejar vacio o insertar letras en este campo'
+    }else if(!/^(\+|-)?\d+$/.test(cantidadFamiliares)){
+        return 'El campo cantidad familia solo acepta numeros enteros como valor'
+    }
+    return ''
+}
+
+const validarEdadesIntegrantes=(edadesIntegrantes)=>{
+
+    if(edadesIntegrantes <=0){
+        return 'No puede dejar vacio o insertar letras en este campo'
+    }else if(!/^(\+|-)?\d+$/.test(edadesIntegrantes)){
+        return 'En los campos de edades de integrantes solo acepta numeros enteros como valor'
+    }
+    return ''
 }
 
 const borrarIntegrantes=()=>{
@@ -11,8 +41,9 @@ const borrarIntegrantes=()=>{
         $integrantes[i].remove()
     }
 }
-const crearIntegrantes=()=>{
-    const numeroIntegrantes= Number(document.querySelector('#cantidad-integrantes').value)
+const crearIntegrantes=(numeroIntegrantes)=>{
+
+
     if(numeroIntegrantes>0){
         mostrarBotonCalcular()
     }
@@ -21,17 +52,20 @@ const crearIntegrantes=()=>{
     }
 }
 const mostrarBotonCalcular=()=>{
-    document.querySelector('#calcular').className = ''
+    document.querySelector('#calcular').classList.remove('hidden');
 }
 const crearIntegrante=(indice)=>{
     const $divIntegrante = document.createElement("div")
     $divIntegrante.className = 'integrante'
+    $divIntegrante.id = `edadIntegrante${indice}`
 
     const $label = document.createElement("label")
     $label.textContent = `Edad del integrante N°${indice+1}`
 
     const $input = document.createElement("input")
     $input.type = "number"
+    $input.id = `edadIntegrante${indice}`
+    $input.className="form-control"
 
     $divIntegrante.appendChild($label)
     $divIntegrante.appendChild($input)
@@ -41,22 +75,61 @@ const crearIntegrante=(indice)=>{
 
 document.querySelector('#calcular').onclick = function(e){
     e.preventDefault()
-    const edades= obtenerEdadesIntegrantes()
-    mostrarEdad('mayor',CalcularEdadMayor(edades))
-    mostrarEdad('menor',CalcularEdadMenor(edades))
-    mostrarEdad('promedio',CalcularEdadPromedio(edades))
-    mostrarResultados()
+    const edadesData= obtenerEdadesIntegrantes()
+    let esExito = manejarErrores(edadesData.errores) === 0
+    console.log(esExito)
+    if(esExito){
+        mostrarEdad('mayor',CalcularEdadMayor(edadesData.edades))
+        mostrarEdad('menor',CalcularEdadMenor(edadesData.edades))
+        mostrarEdad('promedio',CalcularEdadPromedio(edadesData.edades))
+        mostrarResultados()
+    }
 }
 
 const obtenerEdadesIntegrantes=()=>{
     const $integrantes = document.querySelectorAll('.integrante input')
-    const edades=[]
-    for(let i=0; i<$integrantes.length;i++){
-        if($integrantes[i].value !=0){
-            edades.push(Number($integrantes[i].value))
-        }
+    const edadesIntegrantes = []
+    const erroresEdadesIntegrantes = {}
+    $integrantes.forEach(function($integrante){
+        let campoNombre = $integrante.id
+        let CampoEdad = Number($integrante.value)
+        let Error = validarEdadesIntegrantes(CampoEdad)
+        edadesIntegrantes.push(CampoEdad)
+        erroresEdadesIntegrantes[campoNombre] = Error
+    })
+    const edadesData = {
+        edades : edadesIntegrantes,
+        errores: erroresEdadesIntegrantes
     }
-    return edades
+    return edadesData
+}
+
+const manejarErrores=(errores)=>{
+    const keys=Object.keys(errores)
+    let cantidadErrores = 0
+    borrarErroresAnteriores()
+    keys.forEach(function(key){
+        const error = errores[key]
+        if(error){
+            cantidadErrores++
+            crearErroresNuevos(error,key)
+        }
+    })
+    return cantidadErrores
+}
+
+const borrarErroresAnteriores=()=>{
+    const $errores = document.querySelectorAll('.error')
+    $errores.forEach(function(error){
+        error.remove()
+    })
+}
+
+const crearErroresNuevos=(error,key)=>{
+    const $error = document.createElement('label')
+    $error.textContent = error
+    $error.className = 'error'
+    document.querySelector(`#${key}`).appendChild($error)
 }
 
 const CalcularEdadMayor=(edades)=>{
@@ -97,4 +170,10 @@ const mostrarResultados=()=>{
 document.querySelector('#reset').onclick = function(e){
     e.preventDefault()
     document.querySelector('#resultados').className = 'hidden'
+    const $integrantes = document.querySelectorAll('.integrante')
+    $integrantes.forEach(function(integrante){
+        integrante.remove()
+    })
+    document.querySelector('#calcular').className = 'btn btn-primary hidden mt-3'
 }
+
