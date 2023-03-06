@@ -250,3 +250,17 @@
 //     }
 // }
 // console.log(contieneString(string1,string2))
+
+
+// pedir al usuario que ingrese dos strings
+const str1 = prompt("Ingresa el primer string:");
+const str2 = prompt("Ingresa el segundo string:");
+
+// variable para almacenar los caracteres del primer string
+const caracteresStr1 = str1.split("");
+
+// variable para almacenar los caracteres del segundo string
+const caracteresStr2 = str2.split("");
+
+// variable para almacenar si todos los caracteres del primer string están contenidos en el segundo string
+let todosContenidos = true;
