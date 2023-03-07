@@ -22,3 +22,23 @@ const validateSymbol = (symbol) => {
   }
   return "";
 };
+const validateDate = (date) => {
+  if (!/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/.test(date)) {
+    if(date === ''){
+      return "Este campo es obligatorio para la busqueda!"
+    }
+    return "Inserte un formato de fecha valido";
+  }
+  let inputDate = new Date(date).getTime();
+  let actualDate = new Date().getTime();
+  let minDate = new Date("1999-01-01").getTime();
+
+  if (inputDate > actualDate) {
+    return "No puede ingresar una fecha futura";
+  }
+  if (inputDate < minDate) {
+    return "No tenemos informacion anterior a 1999";
+  }
+  return "";
+};
+
