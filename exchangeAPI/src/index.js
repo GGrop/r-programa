@@ -8,7 +8,7 @@ document.querySelector("#send").onclick = function (e) {
   if (!symbolErrors && !dateErrors) {
     removeLoading();
     removeOldSymbols();
-    handlerDataSymbols(symbol, date);
+    getSymbols(symbol, date);
   }
 };
 const removeLoading = () => {
@@ -23,7 +23,7 @@ const removeOldSymbols = () => {
       $item.remove();
     });
 };
-function handlerDataSymbols(symbol, date) {
+function getSymbols(symbol, date) {
   var myHeaders = new Headers();
   myHeaders.append("apikey", "K1wPo186HgThBr8LBU4xPtV0QHX2p63S");
 
@@ -37,9 +37,9 @@ function handlerDataSymbols(symbol, date) {
     requestOptions
   )
     .then((response) => response.json())
-    .then((response) => handlerSymbols(response));
+    .then((response) => handleSymbols(response));
 }
-const handlerSymbols = (response) => {
+const handleSymbols = (response) => {
   const symbol = document.querySelector("#symbol").value;
   document.querySelector(
     "#titleResult"
