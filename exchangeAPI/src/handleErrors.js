@@ -13,3 +13,12 @@ fetch("https://api.apilayer.com/exchangerates_data/symbols", requestOptions)
   .then((result) => (symbolList = Object.keys(result.symbols)))
   .catch((error) => console.log("error", error));
 
+const validateSymbol = (symbol) => {
+  if (!symbolList.includes(symbol.toUpperCase())) {
+    if(symbol === ''){
+      return "Este campo es obligatorio para la busqueda, pruebe con USD!"
+    }
+    return "el simbolo que inserto no existe en nuestra base de datos";
+  }
+  return "";
+};
