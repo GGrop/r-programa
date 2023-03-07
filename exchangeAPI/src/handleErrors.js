@@ -52,3 +52,18 @@ const removeOldErrors = () => {
     $error.remove();
   });
 };
+const createNewErrors = (symbolErrors, dateErrors) => {
+  const $divSymbol = document.querySelector("#inputSymbol");
+  const $divDate = document.querySelector("#inputDate");
+
+  $symbolError = document.createElement("p");
+  $symbolError.classList.add("error");
+  $symbolError.textContent = symbolErrors;
+
+  $dateError = document.createElement("p");
+  $dateError.classList.add("error");
+  $dateError.textContent = dateErrors;
+
+  $divSymbol.appendChild($symbolError);
+  $divDate.appendChild($dateError);
+};
