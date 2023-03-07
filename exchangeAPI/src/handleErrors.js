@@ -43,10 +43,10 @@ const validateDate = (date) => {
 };
 
 const handleErrors = (symbolErrors, dateErrors) => {
-  removeOldErrors();
+  removeErrors();
   createNewErrors(symbolErrors, dateErrors);
 };
-const removeOldErrors = () => {
+const removeErrors = () => {
   const $errors = document.querySelectorAll(".error");
   $errors.forEach(($error) => {
     $error.remove();
