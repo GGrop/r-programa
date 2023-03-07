@@ -8,12 +8,18 @@ document.querySelector("#send").onclick = function (e) {
   if (!symbolErrors && !dateErrors) {
     removeLoading();
     removeOldSymbols();
+    handleLoading(1);
     getSymbols(symbol, date);
   }
 };
 const removeLoading = () => {
+const handleLoading = (state) => {
   const loading = document.querySelector(".loading");
-  loading.classList.remove("hidden");
+  if(state){
+    loading.classList.remove("hidden");
+  }else{
+    loading.classList.add("hidden");
+  }
 };
 
 const removeOldSymbols = () => {
@@ -51,6 +57,7 @@ const handleSymbols = (response) => {
 };
 
 const makeInterface = (symbol, response) => {
+  handleLoading(0);
   symbolsValue = response.rates[symbol];
   const symbolItem = document.createElement("li");
   symbolItem.className = "list-group-item list-group-item-action item";
