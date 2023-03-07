@@ -15,3 +15,11 @@ const loading = () => {
   const loading = document.querySelector(".loading");
   loading.classList.remove("hidden");
 };
+
+const removeOldSymbols = () => {
+  const $list = document.querySelectorAll(".item");
+  if ($list)
+    $list.forEach(function ($item) {
+      $item.remove();
+    });
+};
