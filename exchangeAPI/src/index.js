@@ -6,7 +6,7 @@ document.querySelector("#send").onclick = function (e) {
   const dateErrors = validateDate(date);
   handleErrors(symbolErrors, dateErrors);
   if (!symbolErrors && !dateErrors) {
-    loading();
+    removeLoading();
     removeAlldata();
     handlerData(symbol, date);
   }
