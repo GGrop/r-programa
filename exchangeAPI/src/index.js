@@ -51,15 +51,9 @@ const handleSymbols = (response) => {
 };
 
 const makeInterface = (symbol, response) => {
-  showLoading()
   symbolsValue = response.rates[symbol];
   const symbolItem = document.createElement("li");
   symbolItem.className = "list-group-item list-group-item-action item";
   symbolItem.textContent = `${symbol}: ${symbolsValue}`;
   document.querySelector("#results").appendChild(symbolItem);
 };
-
-const showLoading=()=>{
-  const loading = document.querySelector(".loading");
-  loading.classList.add("hidden");
-}
