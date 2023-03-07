@@ -12,3 +12,6 @@ document.querySelector("#send").onclick = function (e) {
   }
 };
 const loading = () => {
+  const loading = document.querySelector(".loading");
+  loading.classList.remove("hidden");
+};
