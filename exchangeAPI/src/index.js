@@ -59,3 +59,7 @@ const makeInterface = (symbol, response) => {
   document.querySelector("#results").appendChild(symbolItem);
 };
 
+const showLoading=()=>{
+  const loading = document.querySelector(".loading");
+  loading.classList.add("hidden");
+}
