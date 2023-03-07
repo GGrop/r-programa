@@ -6,8 +6,8 @@ document.querySelector("#send").onclick = function (e) {
   const dateErrors = validateDate(date);
   handleErrors(symbolErrors, dateErrors);
   if (!symbolErrors && !dateErrors) {
-    removeOldSymbols();
     handleLoading(1);
+    removeSymbols();
     getSymbols(symbol, date);
   }
 };
@@ -20,7 +20,7 @@ const handleLoading = (state) => {
   }
 };
 
-const removeOldSymbols = () => {
+const removeSymbols = () => {
   const $symbols = document.querySelectorAll(".item");
   if ($symbols)
     $symbols.forEach(function ($item) {
