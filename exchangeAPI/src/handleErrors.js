@@ -29,9 +29,9 @@ const validateDate = (date) => {
     }
     return "Inserte un formato de fecha valido";
   }
-  let inputDate = new Date(date).getTime();
-  let actualDate = new Date().getTime();
-  let minDate = new Date("1999-01-01").getTime();
+  const inputDate = new Date(date).getTime();
+  const actualDate = new Date().getTime();
+  const minDate = new Date("1999-01-01").getTime();
 
   if (inputDate > actualDate) {
     return "No puede ingresar una fecha futura";
