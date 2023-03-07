@@ -39,3 +39,13 @@ function handlerDataSymbols(symbol, date) {
     .then((response) => response.json())
     .then((response) => handlerSymbols(response));
 }
+const handlerSymbols = (response) => {
+  const symbol = document.querySelector("#symbol").value;
+  document.querySelector(
+    "#titleResult"
+  ).textContent = ` 1 ${symbol.toUpperCase()} equivale a:`;
+  const symbolList = Object.keys(response.rates);
+  symbolList.forEach((symbol) => {
+    makeInterface(symbol, response);
+  });
+};
