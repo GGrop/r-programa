@@ -7,7 +7,7 @@ document.querySelector("#send").onclick = function (e) {
   handleErrors(symbolErrors, dateErrors);
   if (!symbolErrors && !dateErrors) {
     removeLoading();
-    removeAlldata();
+    removeOldSymbols();
     handlerData(symbol, date);
   }
 };
