@@ -1,0 +1,15 @@
+#results{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap
+}
+.item{
+    cursor: pointer;
+    user-select: none;
+}
+.hidden{
+    display: none;
+}
+.error{
+    color: red;
+}
