@@ -17,9 +17,9 @@ const removeLoading = () => {
 };
 
 const removeOldSymbols = () => {
-  const $list = document.querySelectorAll(".item");
-  if ($list)
-    $list.forEach(function ($item) {
+  const $symbols = document.querySelectorAll(".item");
+  if ($symbols)
+    $symbols.forEach(function ($item) {
       $item.remove();
     });
 };
