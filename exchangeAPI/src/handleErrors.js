@@ -1,9 +1,9 @@
 let symbols = [];
 
-var myHeaders = new Headers();
+const myHeaders = new Headers();
 myHeaders.append("apikey", "K1wPo186HgThBr8LBU4xPtV0QHX2p63S");
 
-var requestOptions = {
+const requestOptions = {
   method: "GET",
   redirect: "follow",
   headers: myHeaders,
