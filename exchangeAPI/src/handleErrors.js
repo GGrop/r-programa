@@ -14,7 +14,8 @@ fetch("https://api.apilayer.com/exchangerates_data/symbols", requestOptions)
   .catch((error) => console.log("error", error));
 
 const validateSymbol = (symbol) => {
-  if (!symbols.includes(symbol.toUpperCase())) {
+  symbol=symbol.toUpperCase()
+  if (!symbols.includes(symbol)) {
     if(symbol === ''){
       return "Este campo es obligatorio para la busqueda, pruebe con USD!"
     }
@@ -53,8 +54,8 @@ const removeErrors = () => {
   });
 };
 const createErrors = (symbolErrors, dateErrors) => {
-  const $divSymbol = document.querySelector("#inputSymbol");
-  const $divDate = document.querySelector("#inputDate");
+  const $divSymbol = document.querySelector("#input-symbol");
+  const $divDate = document.querySelector("#input-date");
 
   $symbolError = document.createElement("p");
   $symbolError.classList.add("error");
