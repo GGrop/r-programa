@@ -44,7 +44,7 @@ const validateDate = (date) => {
 
 const handleErrors = (symbolErrors, dateErrors) => {
   removeErrors();
-  createNewErrors(symbolErrors, dateErrors);
+  createErrors(symbolErrors, dateErrors);
 };
 const removeErrors = () => {
   const $errors = document.querySelectorAll(".error");
@@ -52,7 +52,7 @@ const removeErrors = () => {
     $error.remove();
   });
 };
-const createNewErrors = (symbolErrors, dateErrors) => {
+const createErrors = (symbolErrors, dateErrors) => {
   const $divSymbol = document.querySelector("#inputSymbol");
   const $divDate = document.querySelector("#inputDate");
 
