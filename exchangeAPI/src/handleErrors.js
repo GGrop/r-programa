@@ -42,3 +42,7 @@ const validateDate = (date) => {
   return "";
 };
 
+const handleErrors = (symbolErrors, dateErrors) => {
+  removeOldErrors();
+  createNewErrors(symbolErrors, dateErrors);
+};
