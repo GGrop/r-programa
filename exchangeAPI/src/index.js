@@ -23,3 +23,19 @@ const removeOldSymbols = () => {
       $item.remove();
     });
 };
+function handlerDataSymbols(symbol, date) {
+  var myHeaders = new Headers();
+  myHeaders.append("apikey", "K1wPo186HgThBr8LBU4xPtV0QHX2p63S");
+
+  var requestOptions = {
+    method: "GET",
+    redirect: "follow",
+    headers: myHeaders,
+  };
+  fetch(
+    `https://api.apilayer.com/exchangerates_data/${date}?base=${symbol}`,
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((response) => handlerSymbols(response));
+}
