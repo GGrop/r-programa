@@ -46,3 +46,9 @@ const handleErrors = (symbolErrors, dateErrors) => {
   removeOldErrors();
   createNewErrors(symbolErrors, dateErrors);
 };
+const removeOldErrors = () => {
+  const $errors = document.querySelectorAll(".error");
+  $errors.forEach(($error) => {
+    $error.remove();
+  });
+};
