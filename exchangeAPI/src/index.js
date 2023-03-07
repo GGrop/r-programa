@@ -8,7 +8,7 @@ document.querySelector("#send").onclick = function (e) {
   if (!symbolErrors && !dateErrors) {
     removeLoading();
     removeOldSymbols();
-    handlerData(symbol, date);
+    handlerDataSymbols(symbol, date);
   }
 };
 const removeLoading = () => {
