@@ -6,13 +6,11 @@ document.querySelector("#send").onclick = function (e) {
   const dateErrors = validateDate(date);
   handleErrors(symbolErrors, dateErrors);
   if (!symbolErrors && !dateErrors) {
-    removeLoading();
     removeOldSymbols();
     handleLoading(1);
     getSymbols(symbol, date);
   }
 };
-const removeLoading = () => {
 const handleLoading = (state) => {
   const loading = document.querySelector(".loading");
   if(state){
