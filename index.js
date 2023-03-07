@@ -252,15 +252,52 @@
 // console.log(contieneString(string1,string2))
 
 
-// pedir al usuario que ingrese dos strings
-const str1 = prompt("Ingresa el primer string:");
-const str2 = prompt("Ingresa el segundo string:");
+// // pedir al usuario que ingrese dos strings
+// const str1 = prompt("Ingresa el primer string:");
+// const str2 = prompt("Ingresa el segundo string:");
 
-// variable para almacenar los caracteres del primer string
-const caracteresStr1 = str1.split("");
+// // variable para almacenar los caracteres del primer string
+// const caracteresStr1 = str1.split("");
 
-// variable para almacenar los caracteres del segundo string
-const caracteresStr2 = str2.split("");
+// // variable para almacenar los caracteres del segundo string
+// const caracteresStr2 = str2.split("");
 
-// variable para almacenar si todos los caracteres del primer string están contenidos en el segundo string
-let todosContenidos = true;
+// // variable para almacenar si todos los caracteres del primer string están contenidos en el segundo string
+// let todosContenidos = true;
+
+
+// // verificar si cada caracter del primer string está contenido en el segundo string
+// caracteresStr1.forEach((caracter) => {
+// 	if (!caracteresStr2.includes(caracter)) {
+// 		todosContenidos = false;
+// 	}
+// });
+// // mostrar el resultado en la consola
+// console.log(`¿${str1} está contenido en ${str2}? ${todosContenidos}`);
+
+// /////////////////////////////////////////////////////////////////////////////////////////////
+
+// // pedir al usuario que ingrese dos arreglos de números
+// const arreglo1 = prompt(
+// 	"Ingresa los números del primer arreglo separados por comas:"
+// ).split(",");
+// const arreglo2 = prompt(
+// 	"Ingresa los números del segundo arreglo separados por comas:"
+// ).split(",");
+
+// // unir los dos arreglos en un solo arreglo sin elementos repetidos y ordenado
+// const union = [];
+// for (let i = 0; i < arreglo1.length; i++) {
+// 	if (!union.includes(arreglo1[i])) {
+// 		union.push(arreglo1[i]);
+// 	}
+// }
+// for (let i = 0; i < arreglo2.length; i++) {
+// 	if (!union.includes(arreglo2[i])) {
+// 		union.push(arreglo2[i]);
+// 	}
+// }
+// union.sort((a, b) => a - b);
+
+// // mostrar el resultado en la consola
+// console.log(union);
