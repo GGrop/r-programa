@@ -135,3 +135,8 @@ function handleBlockUser(blockUser) {
   }
 }
 
+function createCompleteCard(pokemon) {
+  addContentCard(pokemon);
+  addColorCard(pokemon);
+  handleLoading(0);
+}
