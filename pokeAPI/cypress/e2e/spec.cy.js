@@ -1,16 +1,16 @@
-// const URL = "http://localhost:8000/";
+const URL = "http://localhost:8000/";
 
-// context("MemoTest", () => {
-//   beforeEach(() => {
-//     cy.visit(URL);
+context("MemoTest", () => {
+  beforeEach(() => {
+    cy.visit(URL);
 
-//   });
+  });
 
-//   it('start and choose, some pokemons',()=>{
-//     cy.get('#start').click()
-//     cy.get(':nth-child(1) > #detail').click()
+  it('start and choose, some pokemons',()=>{
+    cy.get('#start').click()
+    cy.get(':nth-child(1) > #detail').click()
 
-//   })
+  })
 
   // it('make sure there is a board with squares',()=>{
   //   cy.get('.gridWrapper').find('.square').should('have.length',SQUARES)
